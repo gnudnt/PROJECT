@@ -15,9 +15,6 @@ public class WeatherActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         // Thêm ForecastFragment vào container
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.container, new ForecastFragment())
-                .commit();
+
     }
 }

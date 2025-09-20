@@ -26,7 +26,6 @@ public class ForecastFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        // Tạo RecyclerView
         recyclerView = new RecyclerView(getContext());
         recyclerView.setLayoutParams(new RecyclerView.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -34,7 +33,6 @@ public class ForecastFragment extends Fragment {
         ));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        // Dữ liệu mẫu cả tuần
         forecastList = new ArrayList<>();
         forecastList.add(new ForecastItem("Mon", R.drawable.angry_clouds, "Partly Cloudy", "24°C - 31°C"));
         forecastList.add(new ForecastItem("Tue", R.drawable.angry_clouds, "Showers", "24°C - 30°C"));
@@ -44,7 +42,6 @@ public class ForecastFragment extends Fragment {
         forecastList.add(new ForecastItem("Sat", R.drawable.angry_clouds, "Partly Cloudy", "25°C - 28°C"));
         forecastList.add(new ForecastItem("Sun", R.drawable.angry_clouds, "Thunderstorms", "26°C - 28°C"));
 
-        // Adapter
         adapter = new ForecastAdapter(forecastList);
         recyclerView.setAdapter(adapter);
 
