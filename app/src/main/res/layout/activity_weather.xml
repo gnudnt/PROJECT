@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
     android:background="@color/white">
 
     <!-- Toolbar -->
@@ -22,7 +22,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!-- Chữ bên trái -->
             <TextView
                 android:id="@+id/toolbar_title"
                 android:layout_width="wrap_content"
@@ -34,7 +33,6 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentStart="true"/>
 
-            <!-- 2 icon bên phải -->
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
@@ -59,23 +57,24 @@
                     android:src="@drawable/baseline_settings_24"
                     android:contentDescription="@string/settings"/>
             </LinearLayout>
-
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <!-- WeatherFragment (green area) -->
-    <fragment
-        android:id="@+id/weather_fragment"
-        android:name="vn.edu.usth.usthweather.WeatherFragment"
+    <!-- TabLayout giữa Toolbar và ViewPager -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_height="wrap_content"
+        app:tabTextColor="@android:color/darker_gray"
+        app:tabSelectedTextColor="@android:color/black"
+        app:tabIndicatorColor="@android:color/black"
+        app:tabInlineLabel="true"/>
 
-    <!-- ForecastFragment (white area, RecyclerView) -->
-    <fragment
-        android:id="@+id/forecast_fragment"
-        android:name="vn.edu.usth.usthweather.ForecastFragment"
+    <!-- ViewPager2 -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/weather_viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"/>
 
 </LinearLayout>
